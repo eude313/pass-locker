@@ -1,7 +1,6 @@
 import pyperclip
 
 class User:
-    
     pass
 
     user_list = []
