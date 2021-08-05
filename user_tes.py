@@ -20,3 +20,16 @@ class TestUser(unittest.TestCase):
         test_user = User("Test","user","0712345678","test@user.com")#save user
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
+      #tear down method
+    def tearDown(self):  
+        User.user_list = []
+
+    #delete method 
+    def test_delete_user(self):
+        self.new_user.save_user()
+        test_user = User("Test","user","0712345678","test@user.com")#new user
+        test_user.save_user()
+
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list),1)
+        
