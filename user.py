@@ -18,3 +18,14 @@ class User:
     def save_user(self):
         User.user_list.append(self)
         
+    #deleting user information 
+    
+    def delete_user(self):
+        User.user_list.remove(self)
+    
+    #using @classmethod  to find the corresponding date usser   
+    @classmethod
+    def find_by_number(cls,number):
+        for user in cls.user_list:
+            if user.phone_number == number:
+                return user
