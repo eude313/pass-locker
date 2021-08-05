@@ -32,4 +32,23 @@ class TestUser(unittest.TestCase):
 
         self.new_user.delete_user()
         self.assertEqual(len(User.user_list),1)
-        
+        #finding info by number
+    def test_find_by_number(self): 
+        self.new_user.save_user()
+        test_user = User("Test","user","0711222344","test@user.com")
+        test_user.save_user()
+
+        found_user = User.find_by_number("0711222344")
+
+        self.assertEqual(found_user.email,test_user.email)
+    def test_contact_exists(self):
+        self.new_user.save_user()
+        test_user  = User("Test","user","0711223344","test@user.com")#new user
+        test_user.save_user()
+        user_exists = User.user_exists("0711222344")
+
+        self.assertTrue(user_exists)
+    #displaying info of users 
+    
+    
+    
