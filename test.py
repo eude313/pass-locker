@@ -47,7 +47,7 @@ def main():
         if short_code == 'acu':
             print("New User")
             print("-"*10)
-            print("Hey There! What account do you want to create?")
+            print("hello! What account do you want to create?")
             site = input()
             print(f"Aah!! So you love {site}?")
 
@@ -95,7 +95,7 @@ def main():
             print("Email address ...")
             e_address = input()
 
-            print("Enter username ... Hint: a secure password will be generated for you...")
+            print("Enter username ... NB: we will provide you with an encripted password ")
             user_name = input()
 
             s = "abcdefghijklmnopqrstuvwxyzABC!@#$%^&*()?DEFGHIJKLMNO01234567890PQRSTUVWXYZ"
