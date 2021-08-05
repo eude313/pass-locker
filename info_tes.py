@@ -18,6 +18,5 @@ class TestUSer(unittest.TestCase):
     #it returns alist of saved credentials
     def test_display_credentials(self):
       self.assertEqual(info.display_credential(),info.credentials_array)
-      
 if __name__=="__main__":
     unittest.main()
