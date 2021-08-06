@@ -1,10 +1,10 @@
 from user import User
-from info import info
+from info import Info
 import random
 
     #creatingg a new usser
-def create_user(firsn, lastn, phone, email):
-    new_user = User(firsn, lastn, phone, email)
+def create_user(first, lastn, phone, email):
+    new_user = User(first, lastn, phone, email)
     return new_user
 def save_cred(credential):
     
@@ -12,7 +12,7 @@ def save_cred(credential):
     
 def save_user(user):
    
-    user.save_user_details()
+    user.save_user()
     
 def del_cred(credential):
    
@@ -28,12 +28,12 @@ def display_user():
 
 def create_credential(name, word, email):
    
-    new_credential = info(name, word, email)
+    new_credential = Info(name, word, email)
     return new_credential
 
 def display_cred():
     
-    return info.display_credential()
+    return Info.display_credential()
 
 def main():
 
@@ -52,28 +52,28 @@ def main():
             print(f"Aah!! So you love {site}?")
 
             print("First name ....")
-            f_name = input()
+            first_name = input()
 
             print("Last name ...")
-            l_name = input()
+            last_name = input()
 
             print("Phone number ...")
-            p_number = input()
+            phone_number = input()
 
             print("Email address ...")
-            e_address = input()
+            email = input()
 
             print("Enter username ...")
             user_name = input()
 
             print("Enter Password ...")
-            pword = input()
+            password = input()
 
-            save_user(create_user(f_name, l_name, p_number, e_address))
-            save_cred(create_credential(user_name, pword, e_address))  
+            save_user(create_user(first_name,last_name,phone_number,email))
+            # save_cred(create_credential(user_name, password, email))  
             print('\n')
-            print(f" A new {site} account by {f_name} {l_name} has successfully been created")
-            print(f" The username is {user_name} and the password is {pword}")
+            print(f" A new {site} account by {first_name} {last_name} has successfully been created")
+            print(f" The username is {user_name} and the password is {password}")
             print('\n')
 
         elif short_code == 'acc':
@@ -84,28 +84,28 @@ def main():
             print(f"Aah!! So you love {site}?")
 
             print("First name ....")
-            f_name = input()
+            first_name = input()
 
             print("Last name ...", )
-            l_name = input()
+            last_name = input()
 
             print("Phone number ...")
-            p_number = input()
+            phone_number = input()
 
             print("Email address ...")
-            e_address = input()
+            email = input()
 
             print("Enter username ... NB: we will provide you with an encripted password ")
             user_name = input()
 
             s = "abcdefghijklmnopqrstuvwxyzABC!@#$%^&*()?DEFGHIJKLMNO01234567890PQRSTUVWXYZ"
-            pword = "".join(random.sample(s, 8))
+            password = "".join(random.sample(s, 8))
 
-            save_user(create_user(f_name,l_name,p_number,e_address))  
-            save_cred(create_credential(user_name, pword, e_address)) 
+            save_user(create_user(first_name,last_name,phone_number,email))  
+            save_cred(create_credential(user_name, password, email)) 
             print('\n')
-            print(f" A new {site} account by {f_name} {l_name} has successfully been created")
-            print(f" The username is {user_name} and the password is {pword}")
+            print(f" A new {site} account by {first_name} {last_name} has successfully been created")
+            print(f" The username is {user_name} and the password is {password}")
             print('\n')
 
         elif short_code == 'disp':

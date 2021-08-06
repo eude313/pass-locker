@@ -1,21 +1,19 @@
-import unittest # importing the unittest module
+import unittest 
 import pyperclip 
-from user import User # importing user lass
+from user import User 
 
 class TestUser(unittest.TestCase):
    
     def setUp(self):
         
-        self.new_user = User("James","Muriuki","0712345678","james@ms.com")# create user object
-
-
+        self.new_user = User("James","Muriuki","0712345678","james@ms.com")
+        
     def test_init(self):
         
         self.assertEqual(self.new_user.first_name, "James")
         self.assertEqual(self.new_user.last_name, "Muriuki")
         self.assertEqual(self.new_user.phone_number, "0712345678")
         self.assertEqual(self.new_user.email, "james@ms.com")
-
 
     def test_save_user(self):
       
@@ -29,12 +27,8 @@ class TestUser(unittest.TestCase):
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
 
-        #setup and class creation up here
-    
     def tearDown(self):
         User.user_list = []
-
-        #
 
     def test_delete_user(self):
        
@@ -68,8 +62,6 @@ class TestUser(unittest.TestCase):
     def test_display_all_users(self):
         
         self.assertEqual(User.display_users(),User.user_list)
-
-
 
     def test_copy_email(self):
        

@@ -1,4 +1,4 @@
-class info:
+class Info:
     #class that generates new credential for users 
     pass
     infomation_array = []
@@ -9,8 +9,8 @@ class info:
         
  #save_contact method saves info       
     def save_info(self):    
-        info.infomation_array.append(self) 
-   #method that returns the infomation array     
+        Info.infomation_array.append(self) 
+ #method that returns the infomation array     
     @classmethod
     def display_info(cls):   
         return cls.infomation_array
