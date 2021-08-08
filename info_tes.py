@@ -1,3 +1,4 @@
+
 import unittest
 from info import Info
 
@@ -12,9 +13,9 @@ class TestUSer(unittest.TestCase):
         self.assertEqual(self.infomation_array.email, "email@ms.com")
         self.assertEqual(self.infomation_array.password, "password")
         #saving Info
-    def test_save_cred(self):
-        # self.infomation_array.save_infodisplay_info()  
-        self.assertEqual(len(Info.infomation_array), 1)
+    def test_save_info(self):
+        self.infomation_array.save_info,Info.display_info()
+        # self.assertEqual(len(Info.infomation_array),1)
     # it returns alist of saved infodisplay_infos
     def test_display_info(self):
         self.assertEqual(Info.display_info(),Info.infomation_array)

@@ -6,17 +6,17 @@ import random
 def create_user(first, lastn, phone, email):
     new_user = User(first, lastn, phone, email)
     return new_user
-def save_cred(credential):
+def save_info(infomation):
     
-    credential.save_credential()
+    infomation.save_infomation()
     
 def save_user(user):
    
     user.save_user()
     
-def del_cred(credential):
+def delete_info(infomation):
    
-    credential.delete_credential()
+    infomation.delete_infomation()
     
 def del_user(user):
    
@@ -26,21 +26,20 @@ def display_user():
     
     return User.display_users()
 
-def create_credential(name, word, email):
+def display_info(name, word, email):
    
-    new_credential = Info(name, word, email)
-    return new_credential
+    infomation_array = Info(name, word, email)
+    return infomation_array
 
-def display_cred():
-    
-    return Info.display_credential()
+def display_info():
+    return Info.infomation_array()
 
 def main():
 
     print("Welcome to your Password Locker, choose your path")
 
     while True:
-        print("Allowed Actions: \n acu - create a new user account with a user-defined password\n acc - create a new user account with a auto-generated password\n disp - display all user accounts \n ext -exit the contact list \n")
+        print("Allowed Actions: \n acu - create a new user account with a user-defined password \n disp - display all user accounts \n ext -exit the contact list \n")
 
         short_code = input().lower()
 
@@ -70,39 +69,7 @@ def main():
             password = input()
 
             save_user(create_user(first_name,last_name,phone_number,email))
-            # save_cred(create_credential(user_name, password, email))  
-            print('\n')
-            print(f" A new {site} account by {first_name} {last_name} has successfully been created")
-            print(f" The username is {user_name} and the password is {password}")
-            print('\n')
-
-        elif short_code == 'acc':
-            print("New User")
-            print("-" * 10)
-            print("Hey There!!! What site do you want to create an account for?")
-            site = input()
-            print(f"Aah!! So you love {site}?")
-
-            print("First name ....")
-            first_name = input()
-
-            print("Last name ...", )
-            last_name = input()
-
-            print("Phone number ...")
-            phone_number = input()
-
-            print("Email address ...")
-            email = input()
-
-            print("Enter username ... NB: we will provide you with an encripted password ")
-            user_name = input()
-
-            s = "abcdefghijklmnopqrstuvwxyzABC!@#$%^&*()?DEFGHIJKLMNO01234567890PQRSTUVWXYZ"
-            password = "".join(random.sample(s, 8))
-
-            save_user(create_user(first_name,last_name,phone_number,email))  
-            save_cred(create_credential(user_name, password, email)) 
+           
             print('\n')
             print(f" A new {site} account by {first_name} {last_name} has successfully been created")
             print(f" The username is {user_name} and the password is {password}")
@@ -120,7 +87,7 @@ def main():
                 print('\n')
             else:
                 print('\n')
-                print("You don't seem to have any existing accounts")
+                print("there are no accounts at the moment")
                 print('\n')
 
         elif short_code == "ext":

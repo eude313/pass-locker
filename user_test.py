@@ -6,14 +6,14 @@ class TestUser(unittest.TestCase):
    
     def setUp(self):
         
-        self.new_user = User("James","Muriuki","0712345678","james@ms.com")
+        self.new_user = User("ken","Muki","07123456","ken@ms.com")
         
     def test_init(self):
         
-        self.assertEqual(self.new_user.first_name, "James")
-        self.assertEqual(self.new_user.last_name, "Muriuki")
-        self.assertEqual(self.new_user.phone_number, "0712345678")
-        self.assertEqual(self.new_user.email, "james@ms.com")
+        self.assertEqual(self.new_user.first_name, "ken")
+        self.assertEqual(self.new_user.last_name, "Muki")
+        self.assertEqual(self.new_user.phone_number, "07123456")
+        self.assertEqual(self.new_user.email, "ken@ms.com")
 
     def test_save_user(self):
       
@@ -35,7 +35,6 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user()
         test_user = User("Test","user","0712345678","test@user.com")#new user
         test_user.save_user()
-
         self.new_user.delete_user()
         self.assertEqual(len(User.user_list),1)
 
